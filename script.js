@@ -21,7 +21,7 @@ function scheduleUpdate() {
 }
 scheduleUpdate();
 
-//Save entered text to local storage
+//Save entered text to local storage when save button is pressed.
 $(document).ready(function () {
     $('.saveBtn').on('click', function () {
         var input = $(this).siblings('.description').val();
@@ -30,7 +30,7 @@ $(document).ready(function () {
     })
 })
 
-//Load text from local storage on page load
+//Load text from local storage on page load/refresh
 $('#block0 .description').val(localStorage.getItem('block0'));
 $('#block1 .description').val(localStorage.getItem('block1'));
 $('#block2 .description').val(localStorage.getItem('block2'));
