@@ -22,16 +22,26 @@ function scheduleUpdate() {
 scheduleUpdate();
 
 //Save entered text to local storage
-var save = document.querySelector("#svButton");
-save.addEventListener("click", function(event){
-    event.preventDefault();
-    //This is working, but how can it be constructed so I don't have to create one for every
-    var input = document.querySelector("#timeSlot-9").value;
-
-    localStorage.setItem("input",JSON.stringify(input));
-});
-
-
-
+$(document).ready(function () {
+    $('.saveBtn').on('click', function () {
+        var input = $(this).siblings('.description').val();
+        var tod = $(this).parent().attr('id');
+        localStorage.setItem(tod, input);
+    })
+})
 
 //Load text from local storage on page load
+$('#block0 .description').val(localStorage.getItem('block0'));
+$('#block1 .description').val(localStorage.getItem('block1'));
+$('#block2 .description').val(localStorage.getItem('block2'));
+$('#block3 .description').val(localStorage.getItem('block3'));
+$('#block4 .description').val(localStorage.getItem('block4'));
+$('#block5 .description').val(localStorage.getItem('block5'));
+$('#block6 .description').val(localStorage.getItem('block6'));
+$('#block7 .description').val(localStorage.getItem('block7'));
+$('#block8 .description').val(localStorage.getItem('block8'));
+$('#block9 .description').val(localStorage.getItem('block9'));
+$('#block10 .description').val(localStorage.getItem('block10'));
+$('#block11 .description').val(localStorage.getItem('block11'));
+$('#block12 .description').val(localStorage.getItem('block12'));
+
