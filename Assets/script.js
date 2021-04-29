@@ -6,8 +6,6 @@ currentDay.textContent = today;
 //Function to change css of time-blocks as time changes
 function scheduleUpdate() {
     var currentTime = moment().hours();
-    console.log('hours', currentTime);
-
     for (let i = 6; i < 20; i++) {
         var textArea = $('#timeSlot-'+i)
         if (currentTime > i){
@@ -18,7 +16,7 @@ function scheduleUpdate() {
             $(textArea).addClass('future');
         }
     }
-}
+};
 scheduleUpdate();
 
 //Save entered text to local storage when save button is pressed.
@@ -28,7 +26,14 @@ $(document).ready(function () {
         var tod = $(this).parent().attr('id');
         localStorage.setItem(tod, input);
     })
-})
+});
+
+//Informs user their content has been saved when save button is clicked.
+$('.saveBtn').on('click', function (save) {
+    $('#saved').html('Success! Your event has been saved');
+    $('#saved').fadeOut(2500);
+});
+
 
 //Load text from local storage on page load/refresh
 $('#block0 .description').val(localStorage.getItem('block0'));
