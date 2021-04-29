@@ -29,7 +29,7 @@ $(document).ready(function () {
 });
 
 //Informs user their content has been saved when save button is clicked.
-$('.saveBtn').on('click', function (save) {
+$('.saveBtn').on('click', function () {
     $('#saved').html('Success! Your event has been saved');
     $('#saved').fadeOut(2500);
 });
