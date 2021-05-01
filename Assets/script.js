@@ -27,7 +27,6 @@ $(document).ready(function () {
         localStorage.setItem(tod, input);
 
         $('#saved').html('Success! Your event has been saved');
-    
         setTimeout(function() { 
             $('#saved').html('')
         }, 2000);
