@@ -25,15 +25,14 @@ $(document).ready(function () {
         var input = $(this).siblings('.description').val();
         var tod = $(this).parent().attr('id');
         localStorage.setItem(tod, input);
+
+        $('#saved').html('Success! Your event has been saved');
+    
+        setTimeout(function() { 
+            $('#saved').html('')
+        }, 2000);
     })
 });
-
-//Informs user their content has been saved when save button is clicked.
-$('.saveBtn').on('click', function () {
-    $('#saved').html('Success! Your event has been saved');
-    $('#saved').fadeOut(2500);
-});
-
 
 //Load text from local storage on page load/refresh
 $('#block0 .description').val(localStorage.getItem('block0'));
